@@ -5,47 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class CargoMonitor : MonoBehaviour
 {
-    public Transform ship; // La nave
-    public float fallLimit = -20f; // Límite inferior para detectar caída
-    private Camera cam;
-
-    private void Start()
-    {
-        cam = Camera.main;
-    }
+    public float fallLimit = -5f;
+    private bool isRestarting = false;
 
     private void Update()
     {
-        if (HasFallen())
-        {
-            RestartLevel();
-        }
-
-        if (IsOutOfCamera())
+        if (!isRestarting && transform.position.y < fallLimit)
         {
             RestartLevel();
         }
     }
 
-    private bool HasFallen()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        return transform.position.y < fallLimit;
-    }
-
-    private bool IsOutOfCamera()
-    {
-        Vector3 viewPos = cam.WorldToViewportPoint(transform.position);
-
-        // Si está completamente fuera de la pantalla → derrota
-        return viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1;
+        // Detecta suelo por nombre del objeto
+        if (collision.collider.gameObject.name == "Suelo")
+        {
+            RestartLevel();
+        }
     }
 
     private async void RestartLevel()
     {
-        Debug.Log("Derrota: La carga cayó o salió de cámara");
+        if (isRestarting) return;
+        isRestarting = true;
 
-        // Espera obligatoria usando Awaitable (NO corutinas)
-        await Awaitable.WaitForSecondsAsync(1.5f);
+        Debug.Log("DERROTA: La carga cayó");
+
+        await Awaitable.WaitForSecondsAsync(1.2f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
