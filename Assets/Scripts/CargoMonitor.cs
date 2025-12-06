@@ -18,12 +18,24 @@ public class CargoMonitor : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Detecta suelo por nombre del objeto
-        if (collision.collider.gameObject.name == "Suelo")
+        if (isRestarting) return;
+
+        int layer = collision.collider.gameObject.layer;
+
+        // Suelo real
+        if (layer == LayerMask.NameToLayer("Ground"))
+        {
+            RestartLevel();
+        }
+
+        // Obstáculos
+        if (layer == LayerMask.NameToLayer("Obstacle"))
         {
             RestartLevel();
         }
     }
+
+
 
     private async void RestartLevel()
     {
