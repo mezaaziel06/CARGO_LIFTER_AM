@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 4867186}
   - component: {fileID: 4867185}
   - component: {fileID: 4867184}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Triangle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 92447597}
   - component: {fileID: 92447596}
   - component: {fileID: 92447595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 191873835}
   - component: {fileID: 191873834}
   - component: {fileID: 191873833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Triangle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1043,7 @@ GameObject:
   - component: {fileID: 509486345}
   - component: {fileID: 509486344}
   - component: {fileID: 509486343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Triangle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1809,7 +1809,7 @@ GameObject:
   - component: {fileID: 862535813}
   - component: {fileID: 862535812}
   - component: {fileID: 862535811}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1971,7 +1971,7 @@ GameObject:
   - component: {fileID: 1064318715}
   - component: {fileID: 1064318718}
   - component: {fileID: 1064318717}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2133,7 +2133,7 @@ GameObject:
   - component: {fileID: 1149471037}
   - component: {fileID: 1149471036}
   - component: {fileID: 1149471035}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2295,7 +2295,7 @@ GameObject:
   - component: {fileID: 1188940273}
   - component: {fileID: 1188940272}
   - component: {fileID: 1188940271}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2575,7 +2575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3b0e26ff5224e429ff8510591cbce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 0}
   fallLimit: -20
 --- !u!58 &1441321245
 CircleCollider2D:
